@@ -48,7 +48,7 @@ const About = () => {
               }}
             >
 <img
-  src={`${import.meta.env.BASE_URL}trainer.jpg`}
+  src="/trainer.png"
   alt="Profile"
   className="w-full h-full object-cover"
   style={{ borderRadius: '50%' }}

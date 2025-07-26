@@ -7,7 +7,7 @@ const Footer = () => {
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_20%]"
 style={{
-  backgroundImage: `url(${import.meta.env.BASE_URL}anchor.png)`,
+backgroundImage: `url('/anchor.png')`,
   backgroundSize: "cover",
   opacity: 0.4,
 }}
