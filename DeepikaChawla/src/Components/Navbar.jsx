@@ -75,9 +75,10 @@ const Navbar = () => {
                 handleNavLinkClick('/contact');
               }}
             >
-              <button className="bg-yellow-400 text-black font-bold py-1 px-4 rounded-full hover:bg-white transition-all duration-300">
-                Contact
-              </button>
+<button className="cursor-pointer bg-yellow-400 text-black font-bold py-1 px-4 rounded-full hover:bg-white transition-all duration-300">
+  Contact
+</button>
+
             </a>
           </li>
         </ul>

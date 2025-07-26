@@ -4,7 +4,14 @@ import { motion } from "framer-motion"
 // Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
 }
 
 const staggerGroup = {
@@ -19,28 +26,27 @@ const staggerGroup = {
 const HomePage = () => {
   return (
     <div className="w-full overflow-x-hidden relative">
-      {/* Hero Section with Full Image - Responsive Heights */}
+      {/* Hero Section - only image fades in immediately */}
       <motion.section
-        className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28" // Reduced height on mobile
+        className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28 translate-y-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 5, ease: "easeInOut" }}
+        transition={{ duration: 2, ease: "easeInOut" }}
       >
         <img
           src="/image1.jpeg"
           alt="Background"
-          className="absolute inset-0 w-full h-full object-cover object-center md:object-center z-0"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
         />
-        {/* Optional: add overlay content here if needed */}
       </motion.section>
 
-      {/* Overlapping Cards with Scroll Animation - Better Mobile Positioning */}
+      {/* Card Section - only animates when scrolled into view */}
       <motion.div
         className="relative -mt-12 md:-mt-28 z-10 w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-14"
         variants={staggerGroup}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }} // Reduced amount for better mobile trigger
+        viewport={{ once: true, amount: 0.4 }} // animation triggers on scroll
       >
         {/* Card 1 */}
         <motion.a
@@ -71,7 +77,7 @@ const HomePage = () => {
         </motion.a>
       </motion.div>
 
-      {/* Next Section - Better Mobile Spacing */}
+      {/* Empty Section (Future Content) */}
       <section className="w-full bg-white text-black py-8 md:py-2 px-6 mt-4 md:mt-8">
         <div className="max-w-5xl mx-auto text-center">{/* Future content */}</div>
       </section>
