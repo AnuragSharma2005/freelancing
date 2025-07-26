@@ -48,7 +48,7 @@ const About = () => {
               }}
             >
 <img
-  src="/trainer.png"
+  src="/trainer.jpg"
   alt="Profile"
   className="w-full h-full object-cover"
   style={{ borderRadius: '50%' }}
