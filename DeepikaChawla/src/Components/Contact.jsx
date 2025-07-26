@@ -20,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setIsSubmitting(true); 5
 
     const formData = new FormData(e.target);
 
@@ -48,7 +48,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white py-16 px-4 md:px-10">
-      
+
       {/* Full Width Image */}
       <div className="w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden border-4 border-[#430e16] mb-10">
         <img
@@ -172,11 +172,10 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-1/2 px-5 py-3 text-sm sm:text-base rounded-3xl font-semibold transition hover:brightness-110 ${
-                    isSubmitting
+                  className={`w-1/2 px-5 py-3 text-sm sm:text-base rounded-3xl font-semibold transition hover:brightness-110 ${isSubmitting
                       ? 'bg-white text-black cursor-not-allowed'
                       : 'bg-[#841818] text-white'
-                  }`}
+                    }`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
@@ -186,86 +185,86 @@ const Contact = () => {
         </div>
         <ToastContainer position="bottom-right" theme="dark" />
       </section>
-<div className="bg-[#430e16] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] p-6 md:p-8 mt-12 flex items-center justify-center min-h-[120px] w-fit max-w-full mx-auto">
-                  <h1 className='text-white'>Follow Deepika Chawla on Social Media </h1>
-  <div className="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto">
-    {/* Call */}
-    <a
-      href="tel:+918054811273"
-      className="text-white text-4xl p-4 rounded-full bg-blue-400 hover:bg-blue-300 transition flex items-center justify-center object-cover"
-    >
-      <FaPhoneAlt />
-    </a>
-    {/* WhatsApp */}
-    <a
-      href="https://wa.me/918054811273"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white text-4xl p-4 rounded-full bg-green-600 hover:bg-green-500 transition  object-cover"
-    >
-      <FaWhatsapp />
-    </a>
+      <div className="bg-[#430e16] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] p-6 md:p-8 mt-12 flex items-center justify-center min-h-[120px] w-fit max-w-full mx-auto">
+        <h1 className='text-white'>Follow Deepika Chawla on Social Media </h1>
+        <div className="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto">
+          {/* Call */}
+          <a
+            href="tel:+918054811273"
+            className="text-white text-4xl p-4 rounded-full bg-blue-400 hover:bg-blue-300 transition flex items-center justify-center object-cover"
+          >
+            <FaPhoneAlt />
+          </a>
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/918054811273"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-4xl p-4 rounded-full bg-green-600 hover:bg-green-500 transition  object-cover"
+          >
+            <FaWhatsapp />
+          </a>
 
-    {/* Instagram */}
-    <a
-      href="https://instagram.com/YOUR_USERNAME"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white text-4xl p-4 rounded-full bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90 transition  object-cover"
-    >
-      <FaInstagram />
-    </a>
+          {/* Instagram */}
+          <a
+            href="https://instagram.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-4xl p-4 rounded-full bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90 transition  object-cover"
+          >
+            <FaInstagram />
+          </a>
 
-    {/* Facebook */}
-    <a
-      href="https://facebook.com/YOUR_PAGE"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white text-4xl p-4 rounded-full bg-blue-700 hover:bg-blue-600 transition  object-cover"
-    >
-      <FaFacebookF />
-    </a>
+          {/* Facebook */}
+          <a
+            href="https://facebook.com/YOUR_PAGE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-4xl p-4 rounded-full bg-blue-700 hover:bg-blue-600 transition  object-cover"
+          >
+            <FaFacebookF />
+          </a>
 
-    {/* Twitter / X */}
-    <a
-      href="https://twitter.com/YOUR_USERNAME"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white text-4xl p-4 rounded-full bg-black hover:bg-gray-800 transition"
-    >
-      <FaXTwitter />
-    </a>
+          {/* Twitter / X */}
+          <a
+            href="https://twitter.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-4xl p-4 rounded-full bg-black hover:bg-gray-800 transition"
+          >
+            <FaXTwitter />
+          </a>
 
-    {/* YouTube */}
-    <a
-      href="https://youtube.com/YOUR_CHANNEL"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white text-4xl p-4 rounded-full bg-red-600 hover:bg-red-500 transition"
-    >
-      <FaYoutube />
-    </a>
+          {/* YouTube */}
+          <a
+            href="https://youtube.com/YOUR_CHANNEL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-4xl p-4 rounded-full bg-red-600 hover:bg-red-500 transition"
+          >
+            <FaYoutube />
+          </a>
 
-    {/* Email */}
-    <a
-      href="mailto:satwinder.coach@gmail.com"
-      className="text-white text-4xl p-4 rounded-full bg-yellow-500 hover:bg-yellow-400 transition"
-    >
-      <FaEnvelope />
-    </a>
-     {/* 🔗 LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/your-linkedin-id"
-          target="_blank"
-          rel="noopener noreferrer"
-          className=" text-white text-4xl p-4 rounded-full bg-[#0077B5] hover:bg-[#005983] transition"
-        >
-          <FaLinkedin />
-         
-        </a>
-    
-  </div>
-</div>
+          {/* Email */}
+          <a
+            href="mailto:satwinder.coach@gmail.com"
+            className="text-white text-4xl p-4 rounded-full bg-yellow-500 hover:bg-yellow-400 transition"
+          >
+            <FaEnvelope />
+          </a>
+          {/* 🔗 LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/your-linkedin-id"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-white text-4xl p-4 rounded-full bg-[#0077B5] hover:bg-[#005983] transition"
+          >
+            <FaLinkedin />
+
+          </a>
+
+        </div>
+      </div>
 
 
     </div>
