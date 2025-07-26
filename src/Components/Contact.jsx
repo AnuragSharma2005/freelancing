@@ -52,7 +52,7 @@ const Contact = () => {
       {/* Full Width Image */}
       <div className="w-full h-[300px] md:h-[500px] rounded-xl overflow-hidden border-4 border-[#430e16] mb-10">
         <img
-          src="/image1.jpeg"
+          src={`${import.meta.env.BASE_URL}image1.jpeg`}
           alt="Team Member"
           className="w-full h-full object-cover object-center"
         />

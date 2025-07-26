@@ -6,12 +6,12 @@ const Footer = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_20%]"
-        style={{
-          backgroundImage: "url(/anchor.png)",
-          backgroundSize: "cover",
-          // backgroundPosition: "left center",
-          opacity: 0.4,
-        }}
+style={{
+  backgroundImage: `url(${import.meta.env.BASE_URL}anchor.png)`,
+  backgroundSize: "cover",
+  opacity: 0.4,
+}}
+
       />
 
       {/* Dark Overlay for text readability */}

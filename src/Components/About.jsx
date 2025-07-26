@@ -47,12 +47,13 @@ const About = () => {
                 padding: '10px',
               }}
             >
-              <img
-                src="/trainer.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover"
-                style={{ borderRadius: '50%' }}
-              />
+<img
+  src={`${import.meta.env.BASE_URL}trainer.jpg`}
+  alt="Profile"
+  className="w-full h-full object-cover"
+  style={{ borderRadius: '50%' }}
+/>
+
             </div>
           </motion.div>
 

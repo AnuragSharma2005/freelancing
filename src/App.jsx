@@ -7,7 +7,7 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/freelancing"> {/* 👈 Fix applied here */}
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
