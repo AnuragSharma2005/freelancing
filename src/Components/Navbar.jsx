@@ -6,14 +6,15 @@ const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const location = useLocation();
 
-  const handleNavLinkClick = (path) => {
-    if (location.pathname !== path) {
-      window.location.assign(path); // go to new page and reload
-    } else {
-      window.location.reload(); // same page reload
-    }
-    setNavOpen(false); // close mobile menu
-  };
+const handleNavLinkClick = (path) => {
+  if (location.pathname !== path) {
+    window.location.assign(path); // go to new page and reload
+  } else {
+    window.location.href = path; // force full reload from server
+  }
+  setNavOpen(false); // close mobile menu
+};
+
 
   const navLinks = [
     { label: 'Home', path: '/' },
