@@ -95,9 +95,9 @@ backgroundImage: `url('/anchor.png')`,
             <a href="#" className="hover:underline">
               Terms and Conditions
             </a>
-            <a href="#" className="hover:underline">
+            {/* <a href="#" className="hover:underline">
               Books
-            </a>
+            </a> */}
           </div>
           <a
             href="https://wa.me/918837735452"
