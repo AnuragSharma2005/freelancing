@@ -36,7 +36,7 @@ backgroundImage: `url('/anchor.png')`,
 
             <div>
               <h2 className="text-2xl font-bold">Deepika Chawla</h2>
-              <p className="text-lg font-semibold text-gray-300">CEO & Chief Facilitator.</p>
+              <p className="text-lg font-semibold text-gray-300">Anchor and Corporate trainer</p>
             </div>
 
             <div>
