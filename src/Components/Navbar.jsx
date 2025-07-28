@@ -19,7 +19,7 @@ const handleNavLinkClick = (path) => {
 
   const navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
+    { label: 'About', path: '/aboutpage' },
     { label: 'Workshop', path: '/workshop' },
     { label: 'Recommendations', path: '/recommendations' },
     { label: 'Brands', path: '/brands' },

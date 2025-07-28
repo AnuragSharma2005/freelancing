@@ -270,7 +270,6 @@ const Contact = () => {
         transition={{ duration: 0.8 }}
       >
         {/* Background gradients & blur orbs */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black opacity-95 -z-10 rounded-3xl" />
         <motion.div
           className="absolute top-[-30px] left-[-30px] md:top-[-50px] md:left-[-50px] w-48 h-48 md:w-72 md:h-72 bg-emerald-600/20 rounded-full blur-3xl animate-pulse z-0"
           animate={{
@@ -516,11 +515,11 @@ const Contact = () => {
                       animate={{
                         y: [0, -5, 0],
                       }}
-                      transition={{
-                        duration: 2,
-                        repeat: Number.POSITIVE_INFINITY,
-                        ease: "easeInOut",
-                      }}
+                      // transition={{
+                      //   duration: 2,
+                      //   repeat: Number.POSITIVE_INFINITY,
+                      //   ease: "easeInOut",
+                      // }}
                     >
                       <span className="text-sm font-medium text-gray-800">Hello!</span>
                     </motion.div>

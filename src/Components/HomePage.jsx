@@ -25,20 +25,22 @@ const staggerGroup = {
 
 const HomePage = () => {
   return (
-    <div className="w-full overflow-x-hidden relative">
-      {/* Hero Section - only image fades in immediately */}
-      <motion.section
-        className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28 translate-y-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-      >
-<img
-  src="/image1.jpeg"
-  alt="Background"
-  className="absolute inset-0 w-full h-full object-cover object-center z-0"
-/>
-      </motion.section>
+      <div className="w-full overflow-x-hidden relative">
+        {/* Hero Section - only image fades in immediately */}
+<motion.section
+  className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28 "
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 2, ease: "easeInOut" }}
+>
+  <img
+    src="/image1.jpeg"
+    alt="Background"
+    className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
+  />
+</motion.section>
+
+
 
       {/* Card Section - only animates when scrolled into view */}
       <motion.div

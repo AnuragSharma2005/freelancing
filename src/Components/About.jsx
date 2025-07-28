@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -21,6 +22,8 @@ const fadeInUp = {
 };
 
 const About = () => {
+const navigate = useNavigate();
+
   return (
     <section id="about" className="py-20 flex justify-center px-4 scroll-mt-20">
       {/* 🟩 Animated BOX */}
@@ -47,12 +50,12 @@ const About = () => {
                 padding: '10px',
               }}
             >
-<img
-  src="/trainer.jpg"
-  alt="Profile"
-  className="w-full h-full object-cover"
-  style={{ borderRadius: '50%' }}
-/>
+        <img
+          src="/trainer.jpg"
+          alt="Profile"
+          className="w-full h-full object-cover"
+          style={{ borderRadius: '50%' }}
+        />
 
             </div>
           </motion.div>
@@ -76,13 +79,15 @@ const About = () => {
               Thanks for visiting my portfolio!
             </p>
 
-            <motion.button
-              className="mt-4 px-6 py-2 bg-[#FDFFF0] text-[#430e16] font-semibold rounded-full cursor-pointer hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Know More
-            </motion.button>
+<motion.button
+  className="mt-4 px-6 py-2 bg-[#FDFFF0] text-[#430e16] font-semibold rounded-full cursor-pointer hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate('/aboutpage')} // 👈 Update this path
+>
+  Know More
+</motion.button>
+
           </motion.div>
 
         </div>

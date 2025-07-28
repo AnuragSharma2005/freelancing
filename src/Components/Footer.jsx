@@ -1,8 +1,9 @@
 import { Facebook, Twitter, Youtube, Linkedin, Instagram, MessageCircle } from "lucide-react"
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full relative text-white py-12 px-4 md:px-20 overflow-hidden">
+    <footer className="w-full relative text-white py-12 px-4 md:px-20 overflow-hidden z-10">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_20%]"
