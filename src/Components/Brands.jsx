@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/Navbar'; // path sahi rakhna, adjust if needed
+import Navbar from '../Components/Navbar'; // path sahi rakhna, adjust if needed
 
 const Brands = () => {
   return (
