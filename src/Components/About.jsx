@@ -79,14 +79,14 @@ const navigate = useNavigate();
               Thanks for visiting my portfolio!
             </p>
 
-<motion.button
-  className="mt-4 px-6 py-2 bg-[#FDFFF0] text-[#430e16] font-semibold rounded-full cursor-pointer hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  onClick={() => navigate('/aboutpage')} // 👈 Update this path
->
-  Know More
-</motion.button>
+            <motion.button
+              className="mt-4 px-6 py-2 bg-[#FDFFF0] text-[#430e16] font-semibold rounded-full cursor-pointer hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/aboutpage')} // 👈 Update this path
+            >
+            Know More
+          </motion.button>
 
           </motion.div>
 

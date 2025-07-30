@@ -57,11 +57,12 @@ const HomePage = () => {
           className="w-full max-w-[320px] md:max-w-[480px] h-[300px] md:h-[420px] rounded-xl bg-[#430e16] overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300"
         >
           <div className="h-[70%]">
-<img
-  src="/anchor.png"
-  alt="Card"
-  className="w-full h-full object-cover object-top"
-/>          </div>
+          <img
+            src="/anchor.png"
+            alt="Card"
+            className="w-full h-full object-cover object-top"
+          />      
+         </div>
           <div className="h-[30%] flex items-center justify-center text-white font-bold text-base md:text-lg">
             Corporate Trainer
           </div>
@@ -74,7 +75,7 @@ const HomePage = () => {
           className="w-full max-w-[320px] md:max-w-[480px] h-[300px] md:h-[420px] rounded-xl bg-[#430e16] overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300"
         >
           <div className="h-[70%]">
-<img src="/trainer.jpg" alt="Card" className="w-full h-full object-cover object-top" />
+          <img src="/trainer.jpg" alt="Card" className="w-full h-full object-cover object-top" />
           </div>
           <div className="h-[30%] flex items-center justify-center text-white font-bold text-base md:text-lg">
             Anchor
