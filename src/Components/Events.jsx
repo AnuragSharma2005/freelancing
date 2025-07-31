@@ -9,13 +9,13 @@ const videos = [
   },
   {
     id: 2,
-   
-    src: '',
+   title: '',
+    src: 'Events2.mp4',
   },
     {
     id: 3,
-    
-    src: '',
+    title: '',
+    src: 'Events3.mp4',
   },
     {
     id: 4,
@@ -74,29 +74,30 @@ const Events = () => {
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center">Event Highlights</h2>
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            {videos.map((video) => (
-              <motion.div
-                key={video.id}
-                className="rounded-xl overflow-hidden shadow-lg bg-gray-800"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                {/* Video section */}
-                <div className="bg-black overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">
-                  <video controls className="w-full h-full object-cover">
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+           {videos.map((video) => (
+  <motion.div
+    key={video.id}
+    className="rounded-xl overflow-hidden shadow-lg bg-gray-800"
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true }}
+  >
+    <div className="bg-black overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">
+      <video
+        controls
+        className="w-full h-full object-contain bg-black"
+      >
+        <source src={video.src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div className="p-4">
+      <h3 className="text-xl font-semibold text-white">{video.title}</h3>
+    </div>
+  </motion.div>
+))}
 
-                {/* Title section */}
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-white">{video.title}</h3>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

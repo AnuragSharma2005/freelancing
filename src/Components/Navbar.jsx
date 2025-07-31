@@ -34,7 +34,7 @@ const handleNavLinkClick = (path) => {
           onClick={() => handleNavLinkClick('/')}
         >
           <img
-            src="/image2.png"
+            src="/Logo.png"
             alt="Logo"
             className="w-14 h-14 object-contain"
           />
