@@ -418,14 +418,14 @@ const Contact = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            // transition={{ duration: 0.8 }}
           >
             <motion.div
               className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-emerald-600 to-green-600 rounded-full mb-6"
               initial={{ scale: 0, rotate: -180 }}
               whileInView={{ scale: 1, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
+              // transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
               whileHover={{ scale: 1.1, rotate: 5 }}
             >
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -443,7 +443,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              // transition={{ duration: 0.8, delay: 0.2 }}
             >
               Get In{" "}
               <motion.span
@@ -451,7 +451,7 @@ const Contact = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Touch
               </motion.span>
@@ -462,7 +462,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              // transition={{ duration: 0.8, delay: 0.6 }}
             >
               Ready to bring your vision to life? Let's start a conversation about your next project. We're here to help
               you grow and flourish in the digital landscape.
@@ -477,14 +477,14 @@ const Contact = () => {
                 initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
                 whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                // transition={{ duration: 1, ease: "easeOut" }}
                 whileHover={{ scale: 1.05, rotateY: 5 }}
               >
                 {/* Phone Frame */}
                 <motion.div
                   className="relative w-72 h-[580px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl"
                   whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
-                  transition={{ duration: 0.3 }}
+                  // transition={{ duration: 0.3 }}
                 >
                   {/* Screen */}
                   <div className="w-full h-full bg-gradient-to-b from-yellow-100 to-yellow-200 rounded-[2.5rem] overflow-hidden relative">
@@ -494,14 +494,14 @@ const Contact = () => {
                       initial={{ opacity: 0, scale: 1.2 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: 0.5 }}
+                      // transition={{ duration: 0.8, delay: 0.5 }}
                     >
                       <motion.img
                         src="/trainer.jpg"
                         alt="Professional Contact"
                         className="w-full h-full object-cover rounded-2xl shadow-lg"
                         whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
+                        // transition={{ duration: 0.3 }}
                       />
                     </motion.div>
 
@@ -511,7 +511,7 @@ const Contact = () => {
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.8 }}
+                      // transition={{ duration: 0.6, delay: 0.8 }}
                       animate={{
                         y: [0, -5, 0],
                       }}

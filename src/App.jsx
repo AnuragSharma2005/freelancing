@@ -9,11 +9,13 @@ import Recommendations from "./Components/Recommendations";
 import Workshop  from "./Components/Workshop";
 import Brands from "./Components/Brands";
 import Events from "./Components/Events";
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   return (
     <Router> {/* 👈 Fix applied here */}
       <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
         <Navbar />
         <main className="flex-grow">
           <Routes>
