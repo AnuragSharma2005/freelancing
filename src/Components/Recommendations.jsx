@@ -57,42 +57,42 @@ const awards = [
     description: "",
     image: "/awards2.jpg",
   },
-  {
-    id: 3,
-    title: "",
-    description: "",
-    image: "/awards3.jpg",
-  },
-  {
-    id: 4,
-    title: "",
-    description: "",
-    image: "/awards4.jpg",
-  },
+  // {
+  //   id: 3,
+  //   title: "",
+  //   description: "",
+  //   image: "/awards3.jpg",
+  // },
+  // {
+  //   id: 4,
+  //   title: "",
+  //   description: "",
+  //   image: "/awards4.jpg",
+  // },
   {
     id: 5,
     title: "",
     description: ".",
     image: "/awards5.jpg",
   },
-  {
-    id: 6,
-    title: "",
-    description: "",
-    image: "/awards6.jpg",
-  },
-  {
-    id: 7,
-    title: "",
-    description: "",
-    image: "/awards7.jpg",
-  },
-  {
-    id: 8,
-    title: "",
-    description: "",
-    image: "/awards8.jpg",
-  },
+  // {
+  //   id: 6,
+  //   title: "",
+  //   description: "",
+  //   image: "/awards6.jpg",
+  // },
+  // {
+  //   id: 7,
+  //   title: "",
+  //   description: "",
+  //   image: "/awards7.jpg",
+  // },
+  // {
+  //   id: 8,
+  //   title: "",
+  //   description: "",
+  //   image: "/awards8.jpg",
+  // },
 ]
 
 const Recommendations = () => {
@@ -268,7 +268,7 @@ const Recommendations = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20"
         >
           {awards.map((award, index) => (
             <motion.div

@@ -25,7 +25,7 @@ const About = () => {
 const navigate = useNavigate();
 
   return (
-   <section id="about" className="py-16 -mt-10 flex justify-center px-4 scroll-mt-20">
+<section id="about" className="py-16 flex justify-center px-4 scroll-mt-40">
 
       {/* 🟩 Animated BOX */}
       <motion.div
@@ -47,12 +47,12 @@ const navigate = useNavigate();
               style={{
                 borderRadius: '50%',
                 boxShadow: '0 35px 100px #85193C',
-                backgroundColor: '#FDFFF0',
+                backgroundColor: '',
                 padding: '10px',
               }}
             >
         <img
-          src="/trainer.jpg"
+          src="/Aboutme.jpg"
           alt="Profile"
           className="w-full h-full object-cover"
           style={{ borderRadius: '50%' }}
@@ -70,14 +70,15 @@ const navigate = useNavigate();
               About Me
             </h2>
             <p className="mb-4 text-justify">
-              Hi, I'm Anurag Sharma, a passionate full-stack developer currently pursuing my B.E. in Computer Science at Chitkara University.
-              I enjoy turning ideas into real-world digital solutions through clean, efficient, and user-friendly code.
-              With experience in both front-end and back-end technologies, I strive to build applications that are not only functional but also deliver a smooth user experience.
-              My technical skills include proficiency in HTML, CSS, JavaScript, and various frameworks and libraries, enabling me to build responsive and interactive websites.
-              Beyond coding, I’m actively involved in CEED – Chitkara University’s Startup Club, where I serve as a core member of the Event Management Team.
-              There, I contribute to organizing and executing events that promote innovation, entrepreneurship, and collaboration among students.
-              I love working with people, whether it’s through tech or events, and I’m always looking to grow, learn, and make meaningful contributions.
-              Thanks for visiting my portfolio!
+             
+With over 8 years of experience as a dynamic Corporate Anchor and Soft Skills Trainer, I, Deepika Chawla, have had the privilege of empowering more than 10,000 individuals through impactful training sessions and high-energy events. My work seamlessly blends stage presence with training expertise, enabling me to engage, inspire, and transform audiences across diverse sectors.
+
+I’ve collaborated with reputed organizations such as Mahindra & Mahindra Group, Cyber Chords, Chandigarh Stories, and Chitkara University, among others. My training portfolio spans corporate professionals, university students, and technical trainees, across disciplines like Computer Science, Linguistics, Medical Sciences, Engineering, and ITI.
+
+Whether I’m anchoring high-impact corporate events or delivering life-changing soft skills programs, my focus remains on creating confident communicators, effective professionals, and lifelong learners.
+
+I believe in learning by doing, training with passion, and anchoring with charisma — because when people are truly engaged, transformation follows.
+
             </p>
 
             <motion.button
@@ -93,7 +94,9 @@ const navigate = useNavigate();
 
         </div>
       </motion.div>
+      
     </section>
+    
   );
 };
 

@@ -40,7 +40,7 @@ const AboutPage = () => {
             variants={fadeInUp}
             >
             <img
-                src="/trainer.jpg"
+                src="/Anchor.jpg"
                 alt="Deepika Chawla"
                 className="w-64 h-64 object-cover rounded-full border-4 border-white shadow-xl translate-y-20 z-15"
             />
