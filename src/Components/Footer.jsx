@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Youtube, Linkedin, Instagram, MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -43,13 +44,13 @@ backgroundImage: `url('/Footer.png')`,
             <div>
               <h3 className="font-semibold text-lg mb-4">Stay Connected</h3>
               <div className="flex gap-2 md:gap-3 justify-start flex-wrap">
-                <a
+                {/* <a
                   href="#"
                   className="bg-[#3b5998] p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
                   aria-label="Facebook"
                 >
                   <Facebook size={16} />
-                </a>
+                </a> */}
                 <a
                   href="#"
                   className="bg-black p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
@@ -57,22 +58,22 @@ backgroundImage: `url('/Footer.png')`,
                 >
                   <Twitter size={16} />
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="bg-[#ff0000] p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
                   aria-label="YouTube"
                 >
                   <Youtube size={16} />
-                </a>
+                </a> */}
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/deepika-chawla-9b2674180?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   className="bg-[#0077b5] p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={16} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/deepikaa.1996?utm_source=qr&igsh=MXR6NGMxOGVueHZxNA=="
                   className="bg-gradient-to-tr from-yellow-400 to-pink-500 p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
                   aria-label="Instagram"
                 >
@@ -90,7 +91,7 @@ backgroundImage: `url('/Footer.png')`,
             <a href="#" className="hover:underline">
               Privacy Policy
             </a>
-            <a href="#" className="hover:underline">
+            <a href="/contact" className="hover:underline">
               Contact Us
             </a>
             <a href="#" className="hover:underline">
@@ -106,10 +107,10 @@ backgroundImage: `url('/Footer.png')`,
             rel="noopener noreferrer"
             className="hover:scale-105 transition-transform"
           >
-            <div className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full shadow-lg text-xs md:text-sm">
+           <Link to="/contact" className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full shadow-lg text-xs md:text-sm">
               <MessageCircle className="text-green-600" size={16} />
               Contact us
-            </div>
+            </Link>
           </a>
         </div>
       </div>
