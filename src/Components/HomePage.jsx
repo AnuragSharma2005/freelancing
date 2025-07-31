@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Animation Variants
 const fadeInUp = {
@@ -52,9 +53,9 @@ const HomePage = () => {
         <motion.a
           href="#"
           variants={fadeInUp}
-          className="bg-black p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
+          className="bg-[#430e16] p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
         >
-          <div className="bg-[#430e16] rounded-xl overflow-hidden w-full h-full">
+            <Link to="/anchor" className="block w-full h-full">
             <div className="h-[70%] w-full overflow-hidden">
               <img
                 src="/Corporate.jpg"
@@ -65,16 +66,16 @@ const HomePage = () => {
             <div className="h-[30%] flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg">
               Corporate Trainer
             </div>
-          </div>
+          </Link>
         </motion.a>
 
         {/* Card 2 - Anchor */}
         <motion.a
           href="#"
           variants={fadeInUp}
-          className="bg-black p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
+          className="bg-[#430e16] p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
         >
-          <div className="bg-[#430e16] rounded-xl overflow-hidden w-full h-full">
+          <Link className="bg-[#430e16] rounded-xl overflow-hidden w-full h-full">
             <div className="h-[70%] w-full overflow-hidden">
               <img
                 src="/Anchor.jpg"
@@ -85,7 +86,7 @@ const HomePage = () => {
             <div className="h-[30%] flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg">
               Anchor
             </div>
-          </div>
+          </Link>
         </motion.a>
       </motion.div>
 

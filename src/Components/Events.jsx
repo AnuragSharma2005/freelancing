@@ -72,7 +72,7 @@ const Events = () => {
       {/* Videos Section */}
         <section className="bg-white py-12 mt-20">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Event Highlights</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center"></h2>
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
            {videos.map((video) => (
   <motion.div

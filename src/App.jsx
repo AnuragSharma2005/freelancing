@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
+import Anchor from "./Components/Anchor";
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
@@ -13,7 +14,7 @@ import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   return (
-    <Router> {/* 👈 Fix applied here */}
+    <Router> 
       <div className="flex flex-col min-h-screen">
         <ScrollToTop />
         <Navbar />
@@ -21,7 +22,11 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-                <HomePage />
+               <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/anchor" element={<Anchor />} />
+      </Routes>
+                
                 <About />
               </>
             } />
