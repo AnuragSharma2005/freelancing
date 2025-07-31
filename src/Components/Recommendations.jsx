@@ -6,36 +6,90 @@ import { IoClose } from 'react-icons/io5';
 const certificates = [
   {
     id: 1,
-    title: 'Public Speaking Mastery',
-    description: 'Completed a 3-month intensive on effective communication and public speaking.',
+    title: '',
+    description: '',
     image: '/Certificate.jpg',
   },
   {
     id: 2,
-    title: 'Corporate Trainer Excellence',
-    description: 'Certified corporate trainer by ABC Institute.',
-    image: '/certificates/trainer-excellence.jpg',
+    title: '',
+    description: '',
+    image: '/Certificate2.jpg',
   },
   {
     id: 3,
-    title: 'Leadership Development',
-    description: 'Attended leadership program focusing on team building and executive coaching.',
-    image: '/certificates/leadership.jpg',
+    title: '',
+    description: '',
+    image: '/Certificate3.jpg',
+  },
+   {
+    id: 4,
+    title: '',
+    description: '',
+    image: '/Certificate4.jpg',
+  },
+  {
+    id: 5,
+    title: '',
+    description: '',
+    image: '/Certificate5.jpg',
+  },
+  {
+    id: 6,
+    title: '',
+    description: '',
+    image: '/Certificate6.jpg',
   },
 ];
 
 const awards = [
   {
-    id: 101,
-    title: 'Best Trainer Award 2023',
-    description: 'Recognized for outstanding training delivery and mentorship.',
-    image: '/certificates/best-trainer.jpg',
+    id: 1,
+    title: '',
+    description: '.',
+    image: '/awards1.jpg',
   },
   {
-    id: 102,
-    title: 'Corporate Excellence 2022',
-    description: 'Awarded for driving impactful change through corporate coaching.',
-    image: '/certificates/excellence-award.jpg',
+    id: 2,
+    title: '',
+    description: '',
+    image: '/awards2.jpg',
+  },
+   {
+    id: 3,
+    title: '',
+    description: '',
+    image: '/awards3.jpg',
+  },
+  {
+    id: 4,
+    title: '',
+    description: '',
+    image: '/awards4.jpg',
+  },
+   {
+    id: 5,
+    title: '',
+    description: '.',
+    image: '/awards5.jpg',
+  },
+  {
+    id: 6,
+    title: '',
+    description: '',
+    image: '/awards6.jpg',
+  },
+   {
+    id: 7,
+    title: '',
+    description: '',
+    image: '/awards7.jpg',
+  },
+  {
+    id: 8,
+    title: '',
+    description: '',
+    image: '/awards8.jpg',
   },
 ];
 
@@ -50,7 +104,7 @@ const Recommendations = () => {
       <div className="pt-24 px-4 min-h-screen bg-[#f9f9f9]">
         {/* Certifications Section */}
         <motion.h1
-            className="text-3xl md:text-4xl font-bold text-center mb-14 mt-12 text-[#430e16]"
+                    className="max-w-4xl mx-auto bg-[#430e16] text-white shadow-md rounded-xl p-6 text-center mb-4"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -69,7 +123,8 @@ const Recommendations = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="cursor-pointer bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+             className="cursor-pointer bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col min-h-[400px] border border-black"
+
             >
               <img
                 src={cert.image}
@@ -84,34 +139,38 @@ const Recommendations = () => {
           ))}
         </div>
 
-        {/* Awards Section */}
+            {/* Awards Section */}
         <h1 className="text-3xl md:text-4xl font-bold text-center mt-20 mb-12 text-[#430e16]">
-          Awards & Recognitions
-        </h1>
+      Awards & Recognitions
+    </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-20">
-          {awards.map((award, index) => (
-            <motion.div
-              key={award.id}
-              onClick={() => setSelectedAward(award)}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="cursor-pointer bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
-            >
-              <img
-                src={award.image}
-                alt={award.title}
-                className="w-full object-contain max-h-72 bg-[#430e16]"
-              />
-              <div className="p-5">
-                <h2 className="text-xl font-semibold text-[#430e16] mb-2">{award.title}</h2>
-                <p className="text-gray-600 text-sm">{award.description}</p>
-              </div>
-            </motion.div>
-          ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
+        {awards.map((award, index) => (
+          <motion.div
+            key={award.id}
+            onClick={() => setSelectedAward(award)}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="cursor-pointer bg-white shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+          >
+           <div className="w-full h-[250px] bg-[#430e16] overflow-hidden">
+          <img
+            src={award.image}
+            alt={award.title}
+            className="w-full h-full object-cover"
+          />
         </div>
+
+            <div className="p-5">
+              <h2 className="text-xl font-semibold text-[#430e16] mb-2">{award.title}</h2>
+              <p className="text-gray-600 text-sm">{award.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
       </div>
 
       {/* Modal for Certification */}
