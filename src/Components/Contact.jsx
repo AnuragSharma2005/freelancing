@@ -145,14 +145,14 @@ const Contact = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <motion.img
-            src="/Contact.jpg"
-            alt="Deepika Chawla"
-            className="w-full h-full object-cover object-top"
-            style={{ objectPosition: "50% 10%" }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          />
+        <motion.img
+  src="/Contact.jpg"
+  alt="Deepika Chawla"
+  className="w-full h-full object-cover object-top mt-2 md:mt-0"
+  whileHover={{ scale: 1.05 }}
+  transition={{ duration: 0.3 }}
+/>
+
         </motion.div>
 
         {/* Right - Content */}
