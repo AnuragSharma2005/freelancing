@@ -12,7 +12,7 @@ import Workshop from "./Components/Workshop";
 import Brands from "./Components/Brands";
 import Events from "./Components/Events";
 import ScrollToTop from './Components/ScrollToTop';
-
+import Banner from "./Components/Banner";
 function App() {
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<><HomePage /><About /><EventSlider /></>} />
+            <Route path="/" element={<><HomePage /><About /><EventSlider /><Banner /></>} />
             {/* <Route path="/anchor" element={<Anchor />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutpage" element={<AboutPage />} />

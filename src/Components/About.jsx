@@ -27,7 +27,7 @@ const navigate = useNavigate();
   return (
 <section id="about" className="py-16 flex justify-center px-4 scroll-mt-40">
 
-      {/* 🟩 Animated BOX */}
+     
       <motion.div
         className="w-full max-w-screen-xl bg-[#430e16] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] p-12 md:p-20"
         variants={containerVariants}
@@ -42,26 +42,25 @@ const navigate = useNavigate();
             className="order-1 w-full md:w-1/2 flex justify-center md:justify-start px-4 md:px-0"
             variants={fadeInUp}
           >
-            <div
-              className="w-full max-w-[320px] h-[380px] md:h-[400px] shadow-xl"
-              style={{
-                borderRadius: '50%',
-                boxShadow: '0 35px 100px #85193C',
-                backgroundColor: '',
-                padding: '10px',
-              }}
-            >
-        <img
-          src="/Aboutme.jpg"
-          alt="Profile"
-          className="w-full h-full object-cover"
-          style={{ borderRadius: '50%' }}
-        />
+          <div
+                className="w-[100%] sm:w-[300px] h-[340px] md:h-[450px] shadow-xl"
+                style={{
+                  borderRadius: '50%',
+                  boxShadow: '0 35px 100px #85193C',
+                  padding: '10px',
+                }}
+              >
+                <img
+                  src="/Aboutme.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                  style={{ borderRadius: '50%' }}
+                />
+         </div>
 
-            </div>
           </motion.div>
 
-          {/* 🟨 Text Block */}
+          
           <motion.div
             className="order-2 w-full md:w-11/12 text-white px-4 md:px-0 text-left"
             variants={fadeInUp}
