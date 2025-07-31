@@ -4,32 +4,32 @@ import { motion } from 'framer-motion';
 const videos = [
   {
     id: 1,
-    title: 'Opening Ceremony',
-    src: '/Events1.mp4', // relative to public folder
+    title: '',
+    src: '/Events1.mp4', 
   },
   {
     id: 2,
-    title: 'Workshop Highlights',
-    src: '/Events2.mp4',
+   
+    src: '',
   },
     {
     id: 3,
-    title: 'Workshop Highlights',
-    src: '/Events3.mp4',
+    
+    src: '',
   },
     {
     id: 4,
-    title: 'Workshop Highlights',
+    title: '',
     src: '/Events4.mp4',
   },
     {
     id: 5,
-    title: 'Workshop Highlights',
+    title: '',
     src: '/Events5.mp4',
   },
     {
     id: 6,
-    title: 'Workshop Highlights',
+    title: '',
     src: '/Events6.mp4',
   },
 ];

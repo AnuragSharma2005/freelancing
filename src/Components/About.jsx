@@ -25,7 +25,8 @@ const About = () => {
 const navigate = useNavigate();
 
   return (
-    <section id="about" className="py-20 flex justify-center px-4 scroll-mt-20">
+   <section id="about" className="py-16 -mt-10 flex justify-center px-4 scroll-mt-20">
+
       {/* 🟩 Animated BOX */}
       <motion.div
         className="w-full max-w-screen-xl bg-[#430e16] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.2)] p-12 md:p-20"

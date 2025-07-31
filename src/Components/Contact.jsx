@@ -146,7 +146,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.img
-            src="/trainer.jpg"
+            src="/Contact.jpg"
             alt="Deepika Chawla"
             className="w-full h-full object-cover object-top"
             style={{ objectPosition: "50% 10%" }}
@@ -497,7 +497,7 @@ const Contact = () => {
                       // transition={{ duration: 0.8, delay: 0.5 }}
                     >
                       <motion.img
-                        src="/trainer.jpg"
+                        src="/Contact2.jpg"
                         alt="Professional Contact"
                         className="w-full h-full object-cover rounded-2xl shadow-lg"
                         whileHover={{ scale: 1.05 }}

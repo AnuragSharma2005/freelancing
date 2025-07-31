@@ -1,5 +1,5 @@
-"use client"
-import { motion } from "framer-motion"
+"use client";
+import { motion } from "framer-motion";
 
 // Animation Variants
 const fadeInUp = {
@@ -12,7 +12,7 @@ const fadeInUp = {
       ease: "easeOut",
     },
   },
-}
+};
 
 const staggerGroup = {
   hidden: {},
@@ -21,74 +21,80 @@ const staggerGroup = {
       staggerChildren: 0.3,
     },
   },
-}
+};
 
 const HomePage = () => {
   return (
-      <div className="w-full overflow-x-hidden relative">
-        {/* Hero Section - only image fades in immediately */}
-<motion.section
-  className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28 "
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 2, ease: "easeInOut" }}
->
-  <img
-    src="/image1.jpeg"
-    alt="Background"
-    className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
-  />
-</motion.section>
+    <div className="w-full overflow-x-hidden relative">
+      {/* Hero Section */}
+      <motion.section
+        className="relative w-full h-[45vh] md:h-screen -mb-12 md:-mb-28"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, ease: "easeInOut" }}
+      >
+        <img
+          src="/Front.png"
+          alt="Background"
+          className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"
+        />
+      </motion.section>
 
-
-
-      {/* Card Section - only animates when scrolled into view */}
+      {/* Card Section */}
       <motion.div
-        className="relative -mt-12 md:-mt-28 z-10 w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-14"
+        className="relative -mt-12 md:-mt-28 z-10 w-full max-w-7xl mx-auto px-2 flex flex-row justify-center items-center gap-4 md:gap-14"
         variants={staggerGroup}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.4 }} // animation triggers on scroll
+        viewport={{ once: true, amount: 0.4 }}
       >
-        {/* Card 1 */}
+        {/* Card 1 - Corporate Trainer */}
         <motion.a
           href="#"
           variants={fadeInUp}
-          className="w-full max-w-[320px] md:max-w-[480px] h-[300px] md:h-[420px] rounded-xl bg-[#430e16] overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300"
+          className="bg-black p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
         >
-          <div className="h-[70%]">
-          <img
-            src="/anchor.png"
-            alt="Card"
-            className="w-full h-full object-cover object-top"
-          />      
-         </div>
-          <div className="h-[30%] flex items-center justify-center text-white font-bold text-base md:text-lg">
-            Corporate Trainer
+          <div className="bg-[#430e16] rounded-xl overflow-hidden w-full h-full">
+            <div className="h-[70%] w-full overflow-hidden">
+              <img
+                src="/Corporate.jpg"
+                alt="Corporate Trainer"
+                className="w-full h-full object-cover object-[center_50%]"
+              />
+            </div>
+            <div className="h-[30%] flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg">
+              Corporate Trainer
+            </div>
           </div>
         </motion.a>
 
-        {/* Card 2 */}
+        {/* Card 2 - Anchor */}
         <motion.a
           href="#"
           variants={fadeInUp}
-          className="w-full max-w-[320px] md:max-w-[480px] h-[300px] md:h-[420px] rounded-xl bg-[#430e16] overflow-hidden shadow-xl hover:scale-105 transition-transform duration-300"
+          className="bg-black p-2 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-[40%] h-[260px] sm:h-[320px] md:h-[460px]"
         >
-          <div className="h-[70%]">
-          <img src="/trainer.jpg" alt="Card" className="w-full h-full object-cover object-top" />
-          </div>
-          <div className="h-[30%] flex items-center justify-center text-white font-bold text-base md:text-lg">
-            Anchor
+          <div className="bg-[#430e16] rounded-xl overflow-hidden w-full h-full">
+            <div className="h-[70%] w-full overflow-hidden">
+              <img
+                src="/Anchor.jpg"
+                alt="Anchor"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <div className="h-[30%] flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg">
+              Anchor
+            </div>
           </div>
         </motion.a>
       </motion.div>
 
-      {/* Empty Section (Future Content) */}
-      <section className="w-full bg-white text-black py-8 md:py-2 px-6 mt-4 md:mt-8">
+      {/* About / Future Content */}
+     <section className="w-full bg-white text-black py-8 md:py-2 px-6 mt-0 md:mt-4">
         <div className="max-w-5xl mx-auto text-center">{/* Future content */}</div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
