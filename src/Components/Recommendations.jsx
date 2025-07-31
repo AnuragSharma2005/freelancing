@@ -215,10 +215,10 @@ const Recommendations = () => {
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-semibold text-[#430e16] mb-2 group-hover:text-[#80242a] transition-colors duration-300">
-                  {cert.title || "Professional Certificate"}
+                 
                 </h2>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  {cert.description || "Click to view certificate details"}
+        
                 </p>
               </div>
             </motion.div>
@@ -294,12 +294,7 @@ const Recommendations = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-6">
-                <h2 className="text-lg font-semibold text-[#430e16] mb-2 group-hover:text-[#80242a] transition-colors duration-300">
-                  {award.title || "Achievement Award"}
-                </h2>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {award.description || "Click to view award details"}
-                </p>
+              
               </div>
             </motion.div>
           ))}
