@@ -82,25 +82,26 @@ const EventSlider = () => {
         </motion.div>
 
     {/* 🖼️ Slider */}
-    <div className="relative w-full overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
-      <div className="relative w-full h-[280px] sm:h-[400px] bg-black">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.img
-            key={current}
-            src={images[current]}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.4 },
-            }}
-            className="absolute w-full h-full object-cover"
-          />
-        </AnimatePresence>
-      </div>
+   <div className="relative w-full overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)] bg-white">
+  <div className="relative w-full h-[280px] sm:h-[400px]">
+    <AnimatePresence initial={false} custom={direction}>
+      <motion.img
+        key={current}
+        src={images[current]}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{
+          x: { type: "spring", stiffness: 300, damping: 30 },
+          opacity: { duration: 0.4 },
+        }}
+        className="absolute w-full h-full object-cover pointer-events-none"
+      />
+    </AnimatePresence>
+  </div>
+
 
       {/* ⚫ Dot Indicators */}
       <div className="flex justify-center gap-3 mt-4 pb-4">
