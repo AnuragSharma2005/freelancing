@@ -182,7 +182,7 @@ const Contact = () => {
         transition={{ duration: 0.6, delay: 0.8 }}
         viewport={{ once: false }}
       >
-        Motivational Speaker | Author | Life Coach
+        Anchor | Corporate Trainer
       </motion.p>
     </div>
 
@@ -211,32 +211,66 @@ const Contact = () => {
 
     {/* Social Icons */}
     <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3 mb-4 md:mb-5 text-base md:text-2xl">
-      {[
-        { icon: FaWhatsapp, bg: "bg-green-600 hover:bg-green-500", delay: 0 },
-        {
-          icon: FaInstagram,
-          bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90",
-          delay: 0.1,
-        },
-        { icon: FaFacebookF, bg: "bg-blue-700 hover:bg-blue-600", delay: 0.2 },
-        { icon: FaXTwitter, bg: "bg-black hover:bg-gray-800", delay: 0.3 },
-        { icon: FaYoutube, bg: "bg-red-600 hover:bg-red-500", delay: 0.4 },
-        { icon: FaLinkedin, bg: "bg-[#0077B5] hover:bg-[#005983]", delay: 0.5 },
-      ].map((social, index) => (
-        <motion.a
-          key={index}
-          href="#"
-          className={`${social.bg} text-white p-2 md:p-3 rounded-full`}
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.15, rotate: 5 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20, delay: 1.4 + social.delay }}
-          viewport={{ once: false }}
-        >
-          <social.icon />
-        </motion.a>
-      ))}
-    </div>
+  {[
+    {
+      icon: FaWhatsapp,
+      bg: "bg-green-600 hover:bg-green-500",
+      delay: 0,
+      link: "https://wa.me/918837735452", // Replace with actual number
+    },
+    {
+      icon: FaInstagram,
+      bg: "bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 hover:opacity-90",
+      delay: 0.1,
+      link: "https://www.instagram.com/deepikaa.1996?utm_source=qr&igsh=MXR6NGMxOGVueHZxNA==",
+    },
+    // {
+    //   icon: FaFacebookF,
+    //   bg: "bg-blue-700 hover:bg-blue-600",
+    //   delay: 0.2,
+    //   link: "https://www.facebook.com/deepikaa.1996", // Replace with correct username
+    // },
+    {
+      icon: FaXTwitter,
+      bg: "bg-black hover:bg-gray-800",
+      delay: 0.3,
+      link: "https://twitter.com/deepikaa_1996", // Replace with correct handle
+    },
+    // {
+    //   icon: FaYoutube,
+    //   bg: "bg-red-600 hover:bg-red-500",
+    //   delay: 0.4,
+    //   link: "https://www.youtube.com/@deepikaachawla", // Replace with correct channel
+    // },
+    {
+      icon: FaLinkedin,
+      bg: "bg-[#0077B5] hover:bg-[#005983]",
+      delay: 0.5,
+      link: "https://www.linkedin.com/in/deepika-chawla-9b2674180?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", // Replace with correct profile
+    },
+  ].map((social, index) => (
+    <motion.a
+      key={index}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${social.bg} text-white p-2 md:p-3 rounded-full`}
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      whileHover={{ scale: 1.15, rotate: 5 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        delay: 1.4 + social.delay,
+      }}
+      viewport={{ once: false }}
+    >
+      <social.icon />
+    </motion.a>
+  ))}
+</div>
+
 
     {/* Contact Info */}
     <motion.div
@@ -247,18 +281,18 @@ const Contact = () => {
       viewport={{ once: false }}
     >
       <motion.span
-        className="text-white"
+        className="text-white cursor-pointer"
         whileHover={{ scale: 1.05, color: "#10b981" }}
         transition={{ duration: 0.2 }}
       >
-        +91 80548 11273
+        +91 88377-35452
       </motion.span>
       <motion.span
-        className="text-white"
+        className="text-white cursor-pointer"
         whileHover={{ scale: 1.05, color: "#10b981" }}
         transition={{ duration: 0.2 }}
       >
-        satwinder.coach@gmail.com
+        Dc884871@gmail.com
       </motion.span>
     </motion.div>
   </motion.div>
@@ -438,7 +472,6 @@ const Contact = () => {
   </div>
 
   <div className="grid lg:grid-cols-3 gap-12 items-start">
-    {/* Left Side - Phone Mockup with Professional Photo */}
     <div className="hidden lg:flex lg:col-span-1 justify-center">
       <div className="relative">
         <div className="relative w-72 h-[580px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[3rem] p-2 shadow-2xl">
@@ -461,7 +494,6 @@ const Contact = () => {
       </div>
     </div>
 
-    {/* Right Side - Professional Contact Form */}
     <div className="lg:col-span-2">
       <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-bold text-white mb-8">Send us a Message</h2>

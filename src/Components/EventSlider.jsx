@@ -48,9 +48,38 @@ const EventSlider = () => {
  return (
   <div className="w-full max-w-4xl mx-auto mt-20 mb-16 px-4 sm:px-0">
     {/* 🔠 Heading */}
-   <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-[#85193C] via-[#DE3C3C] to-[#85193C] text-transparent bg-clip-text">
-  My Event Highlights
-  </h2>
+ <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative mx-auto max-w-fit mb-8"
+          >
+            <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#430e16] via-[#80242a] to-[#430e16] text-center drop-shadow-lg">
+              🎓 My Events Highlights
+            </h1>
+            <motion.div
+              className="h-1.5 w-32 mx-auto mt-4 bg-gradient-to-r from-[#80242a] via-[#430e16] to-[#80242a] rounded-full shadow-lg"
+              initial={{ width: 0 }}
+              animate={{ width: 128 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            />
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+          >
+            A glimpse into memorable events, impactful performances, and moments that truly made a mark on every stage.
+          </motion.p>
+
+        </motion.div>
 
     {/* 🖼️ Slider */}
     <div className="relative w-full overflow-hidden rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.35)]">

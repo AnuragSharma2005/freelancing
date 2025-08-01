@@ -13,6 +13,7 @@ import Brands from "./Components/Brands";
 import Events from "./Components/Events";
 import ScrollToTop from './Components/ScrollToTop';
 import Banner from "./Components/Banner";
+import FloatingContactButton from "./Components/FloatingContactButton";
 function App() {
   return (
     <Router>
@@ -33,6 +34,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingContactButton />
       </div>
     </Router>
   );
