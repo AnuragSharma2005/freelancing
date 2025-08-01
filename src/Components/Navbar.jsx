@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom'; // ✅ useNavigate added
+import { useLocation, useNavigate } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate(); // ✅ useNavigate hook
+  const navigate = useNavigate();
 
-const handleNavLinkClick = (path) => {
+  const handleNavLinkClick = (path) => {
     if (location.pathname !== path) {
-      navigate(path); // ✅ uses React Router routing
+      navigate(path);
     } else {
-      navigate(path); // Optional: force re-navigation
+      navigate(path);
     }
-    setNavOpen(false); // close mobile menu
+    setNavOpen(false);
   };
-
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -28,27 +27,27 @@ const handleNavLinkClick = (path) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#430e16] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-3 md:px-8 flex justify-between items-center">
-        {/* Logo */}
+        
+        {/* Logo and Name */}
         <div
-          className="flex items-center space-x-3 cursor-pointer"
+          className="flex items-center gap-2 md:space-x-3 cursor-pointer"
           onClick={() => handleNavLinkClick('/')}
         >
           <img
             src="/Logo.png"
             alt="Logo"
-            className="w-14 h-14 object-contain"
+            className="w-10 h-10 md:w-14 md:h-14 object-contain"
           />
-<h1
-  onClick={() => handleNavLinkClick('/')}
-  className="text-xl md:text-2xl font-bold uppercase tracking-wide text-white cursor-pointer"
-  style={{ fontFamily: '"Playfair Display", serif' }}
->
-  DEEPIKA CHAWLA
-</h1>
-
+          <h1
+            onClick={() => handleNavLinkClick('/')}
+            className="text-lg md:text-2xl font-bold uppercase tracking-wide text-white cursor-pointer"
+            style={{ fontFamily: '"Playfair Display", serif' }}
+          >
+            DEEPIKA CHAWLA
+          </h1>
         </div>
 
-        {/* Hamburger Icon */}
+        {/* Hamburger Icon (Mobile) */}
         <button
           className="md:hidden text-3xl"
           onClick={() => setNavOpen(!navOpen)}

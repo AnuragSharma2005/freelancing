@@ -36,7 +36,7 @@ const About = () => {
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
       >
-        <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-12">
+       <div className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-12">
           {/* 🟦 Image Block */}
           <motion.div
             className="w-full md:w-1/2 flex justify-center md:justify-start"
@@ -64,7 +64,7 @@ const About = () => {
             className="w-full text-white text-left"
             variants={fadeInUp}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-[#FDFFF0] bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-[#FDFFF0] bg-clip-text text-transparent text-center md:text-left">
               About Me
             </h2>
             <p className="text-sm sm:text-base leading-relaxed text-justify mb-4">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -83,13 +84,15 @@ const AboutPage = () => {
           Let's collaborate to bring energy, elegance, and excellence to your next event or corporate training.
         </motion.p>
 
-        <motion.a
-          href="/contact"
-          className="inline-block mt-6 px-6 py-3 bg-[#430e16]  text-white font-semibold rounded-full hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
-          variants={fadeInUp}
-        >
-          Get in Touch
-        </motion.a>
+      <motion.div variants={fadeInUp}>
+          <Link
+            to="/contact"
+            className="inline-block mt-6 px-6 py-3 bg-[#430e16] text-white font-semibold rounded-full hover:bg-[#DE3C3C] transition duration-300 shadow-lg"
+          >
+            Get in Touch
+          </Link>
+        </motion.div>
+
       </motion.div>
     </section>
   );
