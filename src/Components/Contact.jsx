@@ -605,7 +605,7 @@ const Contact = () => {
                   <span>Sending...</span>
                 </div>
               ) : (
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center cursor-pointer space-x-2">
                   <span>Send Message</span>
                   <svg
                     className="w-5 h-5"
