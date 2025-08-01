@@ -133,7 +133,7 @@ const Contact = () => {
     >
       {/* Hero Section with Profile */}
 <motion.div
-  className="mt-8 md:mt-16 w-screen max-w-none overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#2e0f11] via-[#431316] to-[#2e0f11] flex flex-col md:flex-row sm:rounded-3xl"
+  className="mt-8 md:mt-16 w-full max-w-full overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,0.3)] bg-gradient-to-br from-[#2e0f11] via-[#431316] to-[#2e0f11] flex flex-col md:flex-row sm:rounded-3xl"
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
