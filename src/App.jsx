@@ -1,19 +1,19 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Navbar from "./Components/Navbar";
-// import HomePage from "./Components/HomePage";
-// // import Anchor from "./Components/Anchor";
-// import About from './Components/About';
-// import EventSlider from "./Components/EventSlider";
-// import Contact from './Components/Contact';
-// import Footer from './Components/Footer';
-// import AboutPage from "./Components/Aboutpage";
-// import Recommendations from "./Components/Recommendations";
-// import Workshop from "./Components/Workshop";
-// import Brands from "./Components/Brands";
-// import Events from "./Components/Events";
-// import ScrollToTop from './Components/ScrollToTop';
-// import Banner from "./Components/Banner";
-// import FloatingContactButton from "./Components/FloatingContactButton";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import HomePage from "./Components/HomePage";
+// import Anchor from "./Components/Anchor";
+import About from './Components/About';
+import EventSlider from "./Components/EventSlider";
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
+import AboutPage from "./Components/Aboutpage";
+import Recommendations from "./Components/Recommendations";
+import Workshop from "./Components/Workshop";
+import Brands from "./Components/Brands";
+import Events from "./Components/Events";
+import ScrollToTop from './Components/ScrollToTop';
+import Banner from "./Components/Banner";
+import FloatingContactButton from "./Components/FloatingContactButton";
 // function App() {
 //   return (
 //     <Router>
@@ -40,4 +40,4 @@
 //   );
 // }
 
-// export default App;
+export default App;
