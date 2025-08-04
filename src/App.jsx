@@ -14,30 +14,30 @@ import Events from "./Components/Events";
 import ScrollToTop from './Components/ScrollToTop';
 import Banner from "./Components/Banner";
 import FloatingContactButton from "./Components/FloatingContactButton";
-// function App() {
-//   return (
-//     <Router>
-//       <div className="flex flex-col min-h-screen">
-//         <ScrollToTop />
-//         <Navbar />
-//         <main className="flex-grow">
-//           <Routes>
-//             <Route path="/" element={<><HomePage /><About /><EventSlider /><Banner /></>} />
-//             {/* <Route path="/anchor" element={<Anchor />} /> */}
-//             <Route path="/contact" element={<Contact />} />
-//             <Route path="/aboutpage" element={<AboutPage />} />
+function App() {
+  return (
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <ScrollToTop />
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<><HomePage /><About /><EventSlider /><Banner /></>} />
+            {/* <Route path="/anchor" element={<Anchor />} /> */}
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/aboutpage" element={<AboutPage />} />
             
-//             <Route path="/recommendations" element={<Recommendations />} />
-//             <Route path="/workshop" element={<Workshop />} />
-//             <Route path="/brands" element={<Brands />} />
-//             <Route path="/events" element={<Events />} />
-//           </Routes>
-//         </main>
-//         <Footer />
-//         <FloatingContactButton />
-//       </div>
-//     </Router>
-//   );
-// }
+            <Route path="/recommendations" element={<Recommendations />} />
+            <Route path="/workshop" element={<Workshop />} />
+            <Route path="/brands" element={<Brands />} />
+            <Route path="/events" element={<Events />} />
+          </Routes>
+        </main>
+        <Footer />
+        <FloatingContactButton />
+      </div>
+    </Router>
+  );
+}
 
 export default App;
