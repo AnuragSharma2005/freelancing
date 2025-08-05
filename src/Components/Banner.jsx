@@ -8,17 +8,18 @@ const Banner = () => {
   <div className="relative w-full max-w-6xl mx-auto rounded-[60px] overflow-visible shadow-xl h-[200px] md:h-[300px] group">
     
     {/* Background Image (sharp, no blur) */}
-    <img
-      src="/Anchor.jpg"
-      alt="Corporate Workshops"
-      className="w-full h-full object-cover rounded-[60px]"
-    />
+ <img
+  src="/Anchor.jpg"
+  alt="Corporate Workshops"
+  className="w-full h-full object-cover rounded-[60px] md:object-[50%_30%]"
+/>
+
 
     {/* Overlay (transparent only for darkening effect) */}
     <div className="absolute inset-0 bg-black/20 rounded-[60px] flex items-center justify-center px-4">
-      <h2 className="text-white text-sm sm:text-xl md:text-4xl font-bold text-center whitespace-nowrap overflow-hidden text-ellipsis bg-black/50 px-6 py-2 rounded-full shadow-lg">
-        From Corporate to Cultural – Anchoring It All
-      </h2>
+    <h2 className="text-white text-sm sm:text-base md:text-4xl font-bold text-center whitespace-nowrap bg-black/50 px-4 py-2 rounded-full shadow-lg max-w-full">
+      From Corporate to Cultural – Anchoring It All
+    </h2>
     </div>
 
     {/* Buttons */}
