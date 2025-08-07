@@ -86,26 +86,27 @@ const Events = () => {
             className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
             variants={containerVariants}
           >
-            {videos.map((video) => (
-              <motion.div
-                key={video.id}
-                className="rounded-xl overflow-hidden shadow-lg bg-gray-800"
-                variants={cardVariants}
+          {videos.map((video) => (
+          <motion.div
+            key={video.id}
+            className="rounded-xl overflow-hidden shadow-lg bg-gray-800"
+            variants={cardVariants}
+          >
+            <div className="bg-black overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">
+              <video
+                controls
+                className="w-full h-full object-contain bg-black"
+                style={{ imageRendering: 'auto', transform: 'translateZ(0)' }}
               >
-                <div className="bg-black overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">
-                  <video
-                    controls
-                    className="w-full h-full object-contain bg-black"
-                  >
-                    <source src={video.src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-white">{video.title}</h3>
-                </div>
-              </motion.div>
-            ))}
+                <source src={video.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="p-4">
+              <h3 className="text-xl font-semibold text-white">{video.title}</h3>
+            </div>
+          </motion.div>
+        ))}
           </motion.div>
         </div>
       </motion.section>
