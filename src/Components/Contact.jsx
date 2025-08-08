@@ -14,51 +14,73 @@ const Contact = () => {
     location: "",
     phone: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    try {
-      const formPayload = new FormData()
-      formPayload.append("name", formData.name)
-      formPayload.append("email", formData.email)
-      formPayload.append("location", formData.location)
-      formPayload.append("phone", formData.phone)
-      formPayload.append("message", formData.message)
-      const response = await fetch("https://formsubmit.co/anuragwork2005@gmail.com", {
-        method: "POST",
-        body: formPayload,
-      })
-      if (response.ok) {
-        toast.success("Message sent successfully!")
-        setFormData({
-          name: "",
-          email: "",
-          location: "",
-          phone: "",
-          message: "",
-        })
-      } else {
-        toast.error("Failed to send message.")
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    await fetch(
+      'https://script.google.com/macros/s/AKfycbyMxf_sIgXLuXItdCg00ZZelzNkH5yt_islWm3iJiluHILIcL88QeerFDW2qydNAI7gew/exec',
+      {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       }
-    } catch (error) {
-      console.error(error)
-      toast.error("Something went wrong.")
-    } finally {
-      setIsSubmitting(false)
-    }
+    );
+  const timestamp = new Date().toISOString();
+
+// 2. Send to FormSubmit
+const formSubmitData = new FormData();
+formSubmitData.append('name', formData.name);
+formSubmitData.append('email', formData.email);
+formSubmitData.append('phone', formData.phone);
+formSubmitData.append('location', formData.location);
+formSubmitData.append('message', formData.message);
+formSubmitData.append('timestamp', timestamp);
+formSubmitData.append('_captcha', 'false');
+formSubmitData.append('_subject', 'New Submission from Web Form');
+formSubmitData.append('_template', 'table');
+
+await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
+  method: "POST",
+  body: formSubmitData
+});
+
+
+    toast.success('Message sent successfully!');
+    setFormData({
+      name: '',
+      email: '',
+      location: '',
+      phone: '',
+      message: '',
+    });
+  } catch (error) {
+    toast.error('Error occurred: ' + error.message);
+  } finally {
+    setIsSubmitting(false);
   }
+};
+
+
+
+
+
 
   // Animation variants
   const containerVariants = {
@@ -497,134 +519,135 @@ const Contact = () => {
     <div className="lg:col-span-2">
       <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 md:p-12">
         <h2 className="text-3xl font-bold text-white mb-8">Send us a Message</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                placeholder="Full Name"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                placeholder="Email"
-                required
-              />
-            </div>
-          </div>
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+            Full Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleInputChange}
+            className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+            placeholder="Full Name"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+            placeholder="Email"
+            required
+          />
+        </div>
+      </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="location" className="block text-sm font-medium text-gray-300 mb-2">
-                Location *
-              </label>
-              <input
-                type="text"
-                id="location"
-                name="location"
-                value={formData.location}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                placeholder="Your Location"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
-                placeholder="+91 "
-                required
-              />
-            </div>
-          </div>
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="location" className="block text-sm font-medium text-gray-300 mb-2">
+            Location *
+          </label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value={formData.location}
+            onChange={handleInputChange}
+            className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+            placeholder="Your Location"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+            Phone Number *
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleInputChange}
+            className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+            placeholder="+91 "
+            required
+          />
+        </div>
+      </div>
 
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-              Message *
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              rows="6"
-              className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
-              placeholder="Tell us how we can help you achieve them..."
-              required
-            />
-          </div>
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+          Message *
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleInputChange}
+          rows="6"
+          className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
+          placeholder="Tell us how we can help you achieve them..."
+          required
+        />
+      </div>
 
-          <div className="flex items-center justify-between pt-4">
-            <p className="text-sm text-gray-400">* Required fields</p>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {isSubmitting ? (
-                <div className="flex items-center space-x-2">
-                  <svg
-                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    aria-label="Loading"
-                  >
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path
-                      className="opacity-75"
-                      fill="currentColor"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
-                  </svg>
-                  <span>Sending...</span>
-                </div>
-              ) : (
-                <div className="flex items-center cursor-pointer space-x-2">
-                  <span>Send Message</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                </div>
-              )}
-            </button>
-          </div>
-        </form>
+      <div className="flex items-center justify-between pt-4">
+        <p className="text-sm text-gray-400">* Required fields</p>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+        >
+          {isSubmitting ? (
+            <div className="flex items-center space-x-2">
+              <svg
+                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                aria-label="Loading"
+              >
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
+              </svg>
+              <span>Sending...</span>
+            </div>
+          ) : (
+            <div className="flex items-center cursor-pointer space-x-2">
+              <span>Send Message</span>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                />
+              </svg>
+            </div>
+          )}
+        </button>
+      </div>
+    </form>
+
       </div>
     </div>
   </div>
