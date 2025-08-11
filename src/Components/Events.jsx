@@ -91,7 +91,7 @@ const Events = () => {
                     Your browser does not support the video tag.
                   </motion.video>
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-xl font-semibold text-white">{video.title}</h3>
