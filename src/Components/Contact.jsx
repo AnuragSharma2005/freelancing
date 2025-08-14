@@ -295,30 +295,34 @@ await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
 
 
     {/* Contact Info */}
-    <motion.div
-      className="text-xs md:text-base text-gray-300 font-medium flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 2.0 }}
-      viewport={{ once: false }}
-    >
-      <motion.span
-        className="text-white cursor-pointer"
-        whileHover={{ scale: 1.05, color: "#10b981" }}
-        transition={{ duration: 0.2 }}
-      >
-        +91 88377-35452
-      </motion.span>
-      <motion.span
-        className="text-white cursor-pointer"
-        whileHover={{ scale: 1.05, color: "#10b981" }}
-        transition={{ duration: 0.2 }}
-      >
-        Dc884871@gmail.com
-      </motion.span>
-    </motion.div>
-  </motion.div>
-</motion.div>
+          <motion.div
+          className="text-xs md:text-base text-gray-300 font-medium flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2.0 }}
+          viewport={{ once: false }}
+        >
+          <motion.a
+            href="tel:+918837735452"
+            className="text-white cursor-pointer"
+            whileHover={{ scale: 1.05, color: "#10b981" }}
+            transition={{ duration: 0.2 }}
+          >
+            +91 88377-35452
+          </motion.a>
+
+          <motion.a
+            href="mailto:Dc884871@gmail.com"
+            className="text-white cursor-pointer"
+            whileHover={{ scale: 1.05, color: "#10b981" }}
+            transition={{ duration: 0.2 }}
+          >
+            Dc884871@gmail.com
+          </motion.a>
+        </motion.div>
+
+          </motion.div>
+        </motion.div>
 
 
       {/* Professional Contact Information Section */}
@@ -669,7 +673,7 @@ await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
       <span>Your information is secure and will never be shared with third parties</span>
     </div>
     <p className="text-gray-500 text-sm mt-4">
-      © 2024 Deepika Chawla. All rights reserved. | Privacy Policy | Terms of Service
+      © 2025 Deepika Chawla. All rights reserved.
     </p>
   </div>
 </div>

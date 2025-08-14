@@ -38,7 +38,7 @@ const Footer = () => {
 
             <div>
               <h2 className="text-2xl font-bold">Deepika Chawla</h2>
-              <p className="text-lg font-semibold text-gray-300">Anchor and Corporate trainer</p>
+              <p className="text-lg font-semibold text-gray-300">Anchor | Corporate trainer</p>
             </div>
 
             <div>
@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Bottom Bar - keep the same */}
         <div className="border-t border-gray-400 mt-6 pt-4 text-sm flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
           <p className="text-xs text-gray-400">2025 © Copyrights Deepika Chawla</p>
-        <div className="flex flex-wrap justify-center gap-4 text-xs">
+        {/* <div className="flex flex-wrap justify-center gap-4 text-xs">
           <a href="#" className="hover:underline">
             Privacy Policy
           </a>
@@ -97,7 +97,7 @@ const Footer = () => {
           <a href="#" className="hover:underline">
             Terms and Conditions
           </a>
-        </div>
+        </div> */}
 
           <a
             href="https://wa.me/918837735452"
