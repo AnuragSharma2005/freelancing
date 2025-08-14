@@ -32,7 +32,7 @@ const handleSubmit = async (e) => {
 
   try {
     await fetch(
-      'https://script.google.com/macros/s/AKfycbyMxf_sIgXLuXItdCg00ZZelzNkH5yt_islWm3iJiluHILIcL88QeerFDW2qydNAI7gew/exec',
+      'https://script.google.com/macros/s/AKfycbx7vqcBv8JTU67FX4YkZkUENTxNnPvdNHfuywT-jkD7WfVbIJoKWJiJxFCjGPdMW2g5dw/exec',
       {
         method: 'POST',
         mode: 'no-cors',
@@ -56,7 +56,7 @@ formSubmitData.append('_captcha', 'false');
 formSubmitData.append('_subject', 'New Submission from Web Form');
 formSubmitData.append('_template', 'table');
 
-await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
+await fetch("https://formsubmit.co/deepikaashine@gmail.com", {
   method: "POST",
   body: formSubmitData
 });
