@@ -318,7 +318,7 @@ await fetch("https://formsubmit.co/deepikaashine@gmail.com", {
             whileHover={{ scale: 1.05, color: "#10b981" }}
             transition={{ duration: 0.2 }}
           >
-            Dc884871@gmail.com
+           deepikaashine@gmail.com
           </motion.a>
         </motion.div>
 
@@ -492,10 +492,10 @@ await fetch("https://formsubmit.co/deepikaashine@gmail.com", {
     <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
       Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400">Touch</span>
     </h1>
-    <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+    {/* <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
       Ready to bring your vision to life? Let's start a conversation about your next project. We're here to help
       you grow and flourish in the digital landscape.
-    </p>
+    </p> */}
   </div>
 
   <div className="grid lg:grid-cols-3 gap-12 items-start">
