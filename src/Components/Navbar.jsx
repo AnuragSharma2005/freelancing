@@ -7,14 +7,15 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleNavLinkClick = (path) => {
-    if (location.pathname !== path) {
-      navigate(path);
-    } else {
-      navigate(path);
-    }
-    setNavOpen(false);
-  };
+ const handleNavLinkClick = (path) => {
+  if (location.pathname !== path) {
+    navigate(path);
+  } else {
+    window.location.assign(path);
+  }
+  setNavOpen(false);
+};
+
 
   const navLinks = [
     { label: 'Home', path: '/' },
@@ -23,7 +24,7 @@ const Navbar = () => {
     { label: 'Brands', path: '/brands' },
     { label: 'Events', path: '/events' },
   ];
-
+  
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#430e16] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-3 md:px-8 flex justify-between items-center">
