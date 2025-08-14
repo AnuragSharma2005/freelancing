@@ -39,7 +39,7 @@ export default function LogosGrid() {
         {/* Heading */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#430e16] via-[#80242a] to-[#430e16]">
-            🏢 Our Partners
+            🏢 worked with
           </h1>
           <div className="h-1.5 w-28 mx-auto mt-4 bg-gradient-to-r from-[#80242a] to-[#430e16] rounded-full"></div>
         </div>
