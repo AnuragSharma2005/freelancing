@@ -87,18 +87,6 @@ const Footer = () => {
         {/* Bottom Bar - keep the same */}
         <div className="border-t border-gray-400 mt-6 pt-4 text-sm flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
           <p className="text-xs text-gray-400">2025 © Copyrights Deepika Chawla</p>
-        {/* <div className="flex flex-wrap justify-center gap-4 text-xs">
-          <a href="#" className="hover:underline">
-            Privacy Policy
-          </a>
-          <Link to="/contact" className="hover:underline">
-            Contact Us
-          </Link>
-          <a href="#" className="hover:underline">
-            Terms and Conditions
-          </a>
-        </div> */}
-
           <a
             href="https://wa.me/918837735452"
             target="_blank"

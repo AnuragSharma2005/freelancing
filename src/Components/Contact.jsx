@@ -270,28 +270,28 @@ await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
       delay: 0.5,
       link: "https://www.linkedin.com/in/deepika-chawla-9b2674180?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", // Replace with correct profile
     },
-  ].map((social, index) => (
-    <motion.a
-      key={index}
-      href={social.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${social.bg} text-white p-2 md:p-3 rounded-full`}
-      initial={{ opacity: 0, scale: 0 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      whileHover={{ scale: 1.15, rotate: 5 }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        delay: 1.4 + social.delay,
-      }}
-      viewport={{ once: false }}
-    >
-      <social.icon />
-    </motion.a>
-  ))}
-</div>
+      ].map((social, index) => (
+        <motion.a
+          key={index}
+          href={social.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${social.bg} text-white p-2 md:p-3 rounded-full`}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.15, rotate: 5 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            delay: 1.4 + social.delay,
+          }}
+          viewport={{ once: false }}
+        >
+          <social.icon />
+        </motion.a>
+      ))}
+    </div>
 
 
 
