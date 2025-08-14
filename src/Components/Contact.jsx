@@ -294,9 +294,10 @@ await fetch("https://formsubmit.co/adityasharma.5672@gmail.com", {
 </div>
 
 
-    {/* Contact Info */}
-          <motion.div
-          className="text-xs md:text-base text-gray-300 font-medium flex flex-col md:flex-row items-center md:items-start gap-1 md:gap-6"
+
+        {/* Contact Info */}
+        <motion.div
+          className="text-base md:text-lg text-gray-300 font-medium flex flex-col md:flex-row md:items-center md:gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 2.0 }}
