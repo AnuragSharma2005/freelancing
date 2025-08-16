@@ -5,16 +5,16 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Heart, Play, X, Search, Filter, Star, Share2, Download } from "lucide-react"
 
 const videos = [
-  { id: 1, title: "Corporate Gala Night", src: "/Events1.mp4", likes: 0, duration: "2:30" },
-  { id: 2, title: "Team Building Adventure", src: "/Events2.mp4", likes: 0, duration: "1:45" },
-  { id: 3, title: "Product Launch Event", src: "/Events3.mp4",  likes: 0, duration: "3:15" },
-  { id: 4, title: "Holiday Celebration", src: "/Events4.mp4",  likes: 0, duration: "2:10" },
-  { id: 5, title: "Awards Ceremony", src: "/Events5.mp4",  likes: 0, duration: "4:20" },
-  { id: 6, title: "Summer Retreat", src: "/Events6.mp4",  likes: 0, duration: "1:55" },
+  { id: 1, title: "Corporate Gala Night", src: "/events1.mp4", likes: 0, duration: "2:30" },
+  { id: 2, title: "Team Building Adventure", src: "/events2.mp4", likes: 0, duration: "1:45" },
+  { id: 3, title: "Product Launch Event", src: "/events3.mp4",  likes: 0, duration: "3:15" },
+  { id: 4, title: "Holiday Celebration", src: "/events4.mp4",  likes: 0, duration: "2:10" },
+  { id: 5, title: "Awards Ceremony", src: "/events5.mp4",  likes: 0, duration: "4:20" },
+  { id: 6, title: "Summer Retreat", src: "/events6.mp4",  likes: 0, duration: "1:55" },
 ]
 
 const bestMoments = [
-  { id: 1, title: "Epic Highlights Reel", src: "/bestevents2.mp4", likes: 0, duration: "3:45" },
+  { id: 1, title: "Epic Highlights Reel", src: "/bestevents.mp4", likes: 0, duration: "3:45" },
   {
     id: 2,
     title: "Behind the Scenes",
