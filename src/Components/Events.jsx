@@ -1,25 +1,24 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Heart, Play, X, Search, Filter, Star, Share2, Download } from "lucide-react"
+import { Play, X, Star, Share2, Download } from "lucide-react"
 
 const videos = [
-  { id: 1, title: "Corporate Gala Night", src: "/events11.mp4", likes: 0, duration: "2:30" },
-  { id: 2, title: "Team Building Adventure", src: "/events22.mp4", likes: 0, duration: "1:45" },
-  { id: 3, title: "Product Launch Event", src: "/events33.mp4",  likes: 0, duration: "3:15" },
-  { id: 4, title: "Holiday Celebration", src: "/events44.mp4",  likes: 0, duration: "2:10" },
-  { id: 5, title: "Awards Ceremony", src: "/events55.mp4",  likes: 0, duration: "4:20" },
-  { id: 6, title: "Summer Retreat", src: "/events66.mp4",  likes: 0, duration: "1:55" },
+  { id: 1, title: "", src: "/events11.mp4", duration: "2:30" },
+  { id: 2, title: "", src: "/events22.mp4", duration: "1:45" },
+  { id: 3, title: "", src: "/events33.mp4", duration: "3:15" },
+  { id: 4, title: "", src: "/events44.mp4", duration: "2:10" },
+  { id: 5, title: "", src: "/events55.mp4", duration: "4:20" },
+  { id: 6, title: "", src: "/events66.mp4", duration: "1:55" },
 ]
 
 const bestMoments = [
-  { id: 1, title: "Epic Highlights Reel", src: "/bestevents.mp4", likes: 0, duration: "3:45" },
+  { id: 1, title: "", src: "/bestevents.mp4", duration: "3:45" },
   {
     id: 2,
-    title: "Behind the Scenes",
+    title: "",
     src: "https://youtu.be/9tYEkup3_kI?feature=shared",
-    likes: 0,
     duration: "5:20",
   },
 ]
@@ -54,52 +53,16 @@ const cardVariants = {
 
 const Events = () => {
   const [selectedVideo, setSelectedVideo] = useState(null)
-  const [likedVideos, setLikedVideos] = useState(new Set())
-  const [videoLikeCounts, setVideoLikeCounts] = useState({})
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [searchTerm, setSearchTerm] = useState("")
   const [hoveredVideo, setHoveredVideo] = useState(null)
   const videoRefs = useRef({})
 
-  useEffect(() => {
-    const savedLikes = localStorage.getItem("likedVideos")
-    const savedLikeCounts = localStorage.getItem("videoLikeCounts")
-
-    if (savedLikes) {
-      setLikedVideos(new Set(JSON.parse(savedLikes)))
-    }
-
-    if (savedLikeCounts) {
-      setVideoLikeCounts(JSON.parse(savedLikeCounts))
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem("likedVideos", JSON.stringify([...likedVideos]))
-  }, [likedVideos])
-
-  useEffect(() => {
-    localStorage.setItem("videoLikeCounts", JSON.stringify(videoLikeCounts))
-  }, [videoLikeCounts])
-
-  const getCurrentLikeCount = (video, videoId = null) => {
-    const id = videoId || video.id
-    return videoLikeCounts[id] !== undefined ? videoLikeCounts[id] : video.likes
-  }
-
-  const filteredVideos = videos
-    .filter((video) => {
-      const matchesCategory = selectedCategory === "all" || video.category === selectedCategory
-      const matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase())
-      return matchesCategory && matchesSearch
-    })
-    .sort((a, b) => {
-      const aLiked = likedVideos.has(a.id)
-      const bLiked = likedVideos.has(b.id)
-      if (aLiked && !bLiked) return -1
-      if (!aLiked && bLiked) return 1
-      return 0
-    })
+  const filteredVideos = videos.filter((video) => {
+    const matchesCategory = selectedCategory === "all" || video.category === selectedCategory
+    const matchesSearch = video.title.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
 
   const handleVideoHover = (videoId, isHovering) => {
     const videoElement = videoRefs.current[videoId]
@@ -113,45 +76,6 @@ const Events = () => {
         videoElement.pause()
       }
     }
-  }
-
-  const toggleLike = (videoId, originalVideo = null) => {
-    setLikedVideos((prev) => {
-      const newLiked = new Set(prev)
-      const wasLiked = newLiked.has(videoId)
-
-      if (wasLiked) {
-        newLiked.delete(videoId)
-        setVideoLikeCounts((prevCounts) => {
-          const currentCount =
-            prevCounts[videoId] !== undefined
-              ? prevCounts[videoId]
-              : originalVideo
-                ? originalVideo.likes
-                : videos.find((v) => v.id === videoId)?.likes || 0
-          return {
-            ...prevCounts,
-            [videoId]: Math.max(0, currentCount - 1),
-          }
-        })
-      } else {
-        newLiked.add(videoId)
-        setVideoLikeCounts((prevCounts) => {
-          const currentCount =
-            prevCounts[videoId] !== undefined
-              ? prevCounts[videoId]
-              : originalVideo
-                ? originalVideo.likes
-                : videos.find((v) => v.id === videoId)?.likes || 0
-          return {
-            ...prevCounts,
-            [videoId]: currentCount + 1,
-          }
-        })
-      }
-
-      return newLiked
-    })
   }
 
   const shareVideo = async (video) => {
@@ -300,23 +224,13 @@ const Events = () => {
             {filteredVideos.map((video) => (
               <motion.div
                 key={video.id}
-                className={`rounded-xl overflow-hidden shadow-lg group cursor-pointer relative ${
-                  likedVideos.has(video.id)
-                    ? "bg-gradient-to-br from-red-900 to-gray-800 ring-2 ring-red-500/50"
-                    : "bg-gray-800"
-                }`}
+                className="rounded-xl overflow-hidden shadow-lg bg-gray-800 group cursor-pointer relative"
                 variants={cardVariants}
                 whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
                 onHoverStart={() => handleVideoHover(video.id, true)}
                 onHoverEnd={() => handleVideoHover(video.id, false)}
                 onClick={() => setSelectedVideo(video)}
               >
-                {likedVideos.has(video.id) && (
-                  <div className="absolute top-2 left-2 z-10 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">
-                    ❤️ LIKED
-                  </div>
-                )}
-
                 <div className="relative overflow-hidden h-[250px] md:h-[300px] lg:h-[350px]">
                   <video
                     ref={(el) => (videoRefs.current[video.id] = el)}
@@ -350,28 +264,9 @@ const Events = () => {
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-xl font-semibold text-white flex-1">{video.title}</h3>
-                    <motion.button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggleLike(video.id)
-                      }}
-                      className="ml-2"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Heart
-                        className={`w-5 h-5 transition-colors ${
-                          likedVideos.has(video.id) ? "text-red-500 fill-red-500" : "text-gray-400 hover:text-red-400"
-                        }`}
-                      />
-                    </motion.button>
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-400">
-                    <span className="flex items-center gap-1">
-                      <Heart className="w-3 h-3" />
-                      {getCurrentLikeCount(video)} likes
-                    </span>
+                  <div className="flex items-center justify-end text-sm text-gray-400">
                     <div className="flex gap-2">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
@@ -410,11 +305,16 @@ const Events = () => {
         variants={containerVariants}
       >
         <div className="max-w-5xl mx-auto text-center mb-12 ">
-          <motion.h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" variants={heroVariants}>
-            <span className="bg-gradient-to-r from-pink-500 via-red-400 to-yellow-400 bg-clip-text text-transparent">
-              Best Moments
-            </span>
-          </motion.h2>
+       <motion.h2
+          className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6"
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+          variants={heroVariants}
+        >
+          <span className="bg-gradient-to-r from-yellow-400 via-red-300 to-pink-400 bg-clip-text text-transparent">
+            Best Moments
+          </span>
+        </motion.h2>
           <motion.div className="flex items-center justify-center gap-2 text-yellow-500" variants={heroVariants}>
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-current" />
@@ -486,29 +386,9 @@ const Events = () => {
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-xl font-semibold text-white flex-1">{video.title}</h3>
-                    <motion.button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        toggleLike(`best-${video.id}`, video)
-                      }}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Heart
-                        className={`w-5 h-5 transition-colors ${
-                          likedVideos.has(`best-${video.id}`)
-                            ? "text-red-500 fill-red-500"
-                            : "text-gray-400 hover:text-red-400"
-                        }`}
-                      />
-                    </motion.button>
                   </div>
 
-                  <div className="flex items-center justify-between text-sm text-gray-400">
-                    <span className="flex items-center gap-1">
-                      <Heart className="w-3 h-3" />
-                      {getCurrentLikeCount(video, `best-${video.id}`)} likes
-                    </span>
+                  <div className="flex items-center justify-end text-sm text-gray-400">
                     <div className="flex gap-2">
                       <motion.button whileHover={{ scale: 1.1 }} className="text-gray-400 hover:text-white">
                         <Share2 className="w-4 h-4" />
@@ -573,15 +453,7 @@ const Events = () => {
 
               <div className="p-6 bg-gray-900 border-t border-gray-700">
                 <h3 className="text-2xl font-bold text-white mb-4">{selectedVideo.title}</h3>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="flex items-center gap-2 text-gray-300">
-                    <Heart className="w-4 h-4 text-red-400" />
-                    {getCurrentLikeCount(
-                      selectedVideo,
-                      selectedVideo.id.toString().includes("best") ? `best-${selectedVideo.id}` : selectedVideo.id,
-                    )}{" "}
-                    likes
-                  </span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-4">
                   <div className="flex gap-3 w-full sm:w-auto">
                     <button
                       onClick={() => shareVideo(selectedVideo)}
@@ -597,34 +469,6 @@ const Events = () => {
                       <Download className="w-4 h-4" />
                       Download
                     </button>
-                    <motion.button
-                      onClick={() =>
-                        toggleLike(
-                          selectedVideo.id.toString().includes("best") ? `best-${selectedVideo.id}` : selectedVideo.id,
-                          selectedVideo,
-                        )
-                      }
-                      className="px-4 py-2 text-sm bg-gray-800 hover:bg-red-600 rounded-md transition-all duration-200 flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Heart
-                        className={`w-4 h-4 transition-colors ${
-                          likedVideos.has(
-                            selectedVideo.id.toString().includes("best")
-                              ? `best-${selectedVideo.id}`
-                              : selectedVideo.id,
-                          )
-                            ? "text-red-500 fill-red-500"
-                            : "text-gray-300"
-                        }`}
-                      />
-                      {likedVideos.has(
-                        selectedVideo.id.toString().includes("best") ? `best-${selectedVideo.id}` : selectedVideo.id,
-                      )
-                        ? "Liked"
-                        : "Like"}
-                    </motion.button>
                   </div>
                 </div>
               </div>
