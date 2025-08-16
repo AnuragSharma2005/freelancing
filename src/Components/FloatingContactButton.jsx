@@ -1,12 +1,31 @@
-// src/Components/FloatingContactButton.jsx
 import { FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
 
 const FloatingContactButton = () => {
+  const [side, setSide] = useState("right"); 
+
+  const handleTouchEnd = (e) => {
+    const touchX = e.changedTouches[0].clientX;
+    const screenWidth = window.innerWidth;
+
+    
+    if (touchX < screenWidth / 2) {
+      setSide("left");
+    } else {
+      setSide("right");
+    }
+  };
+
   return (
-    <div className="fixed bottom-6 right-4 z-50 flex items-center gap-3">
+    <div
+      className={`fixed bottom-6 z-50 flex items-center gap-3 ${
+        side === "left" ? "left-6" : "right-6"
+      }`}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* WhatsApp Button with hover tooltip */}
       <div className="relative group">
-        {/* Tooltip (hidden by default, visible on hover) */}
+        {/* Tooltip */}
         <div className="absolute right-full mr-2 hidden group-hover:flex items-center justify-center bg-[#430e16] text-white text-sm px-4 py-1 rounded shadow-md whitespace-nowrap">
           WhatsApp
         </div>
