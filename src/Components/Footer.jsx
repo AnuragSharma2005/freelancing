@@ -51,13 +51,13 @@ const Footer = () => {
                 >
                   <Facebook size={16} />
                 </a> */}
-                <a
+                {/* <a
                   href="#"
                   className="bg-black p-2 md:p-3 rounded hover:opacity-80 transition-opacity"
                   aria-label="Twitter"
                 >
                   <Twitter size={16} />
-                </a>
+                </a> */}
                 {/* <a
                   href="#"
                   className="bg-[#ff0000] p-2 md:p-3 rounded hover:opacity-80 transition-opacity"

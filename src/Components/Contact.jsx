@@ -252,12 +252,12 @@ await fetch("https://formsubmit.co/deepikaashine@gmail.com", {
     //   delay: 0.2,
     //   link: "https://www.facebook.com/deepikaa.1996", // Replace with correct username
     // },
-    {
-      icon: FaXTwitter,
-      bg: "bg-black hover:bg-gray-800",
-      delay: 0.3,
-      link: "https://twitter.com/deepikaa_1996", // Replace with correct handle
-    },
+    // {
+    //   icon: FaXTwitter,
+    //   bg: "bg-black hover:bg-gray-800",
+    //   delay: 0.3,
+    //   link: "https://twitter.com/deepikaa_1996", // Replace with correct handle
+    // },
     // {
     //   icon: FaYoutube,
     //   bg: "bg-red-600 hover:bg-red-500",

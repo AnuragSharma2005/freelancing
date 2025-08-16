@@ -403,13 +403,13 @@ const Events = () => {
       </motion.section>
 
       <motion.section
-        className="bg-[#f8f8f8] py-20 text-black relative"
+        className="bg-white py-20 text-black relative"
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
         variants={containerVariants}
       >
-        <div className="max-w-5xl mx-auto text-center mb-12">
+        <div className="max-w-5xl mx-auto text-center mb-12 ">
           <motion.h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4" variants={heroVariants}>
             <span className="bg-gradient-to-r from-pink-500 via-red-400 to-yellow-400 bg-clip-text text-transparent">
               Best Moments
